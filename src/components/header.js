@@ -13,6 +13,7 @@ const Header = {
                 <li><a href="/product" class="block px-4 py-3 hover:bg-blue-800 hover:text-white hover:underline">Sản phẩm</a></li>
                 <li><a href="/signup" class="block px-4 py-3 hover:bg-blue-800 hover:text-white hover:underline">Sign up</a></li>
                 <li><a href="/signin" class="block px-4 py-3 hover:bg-blue-800 hover:text-white hover:underline">Sign in</a></li>
+                <li><a href="/admin/dashboard" class="block px-4 py-3 hover:bg-blue-800 hover:text-white hover:underline">Admin</a></li>
             </ul>
             <div class="flex px-4 py-3 inline-block pl-5">
                 <input type="text" class="= w-[225px] px-1">
