@@ -8,12 +8,12 @@ const Header = {
         </div>
         <nav class="max-w-5xl mx-auto bg-orange-600 grid grid-cols-2">
             <ul class="flex">
-                <li><a href="/" class="block px-4 py-3 hover:bg-blue-800 hover:text-white hover:underline">Trang chủ</a></li>
-                <li><a href="/about" class="block px-4 py-3 hover:bg-blue-800 hover:text-white hover:underline">Thông tin</a></li>
-                <li><a href="/product" class="block px-4 py-3 hover:bg-blue-800 hover:text-white hover:underline">Sản phẩm</a></li>
-                <li><a href="/signup" class="block px-4 py-3 hover:bg-blue-800 hover:text-white hover:underline">Sign up</a></li>
-                <li><a href="/signin" class="block px-4 py-3 hover:bg-blue-800 hover:text-white hover:underline">Sign in</a></li>
-                <li><a href="/admin/dashboard" class="block px-4 py-3 hover:bg-blue-800 hover:text-white hover:underline">Admin</a></li>
+                <li><a href="/" class="block px-3 py-3 hover:bg-blue-800 hover:text-white hover:underline">Trang chủ</a></li>
+                <li><a href="/about" class="block px-3 py-3 hover:bg-blue-800 hover:text-white hover:underline">Thông tin</a></li>
+                <li><a href="/product" class="block px-3 py-3 hover:bg-blue-800 hover:text-white hover:underline">Sản phẩm</a></li>
+                <li><a href="/signup" class="block px-3 py-3 hover:bg-blue-800 hover:text-white hover:underline">Sign up</a></li>
+                <li><a href="/signin" class="block px-3 py-3 hover:bg-blue-800 hover:text-white hover:underline">Sign in</a></li>
+                <li><a href="/admin/dashboard" class="block px-3 py-3 hover:bg-blue-800 hover:text-white hover:underline">Admin</a></li>
             </ul>
             <div class="flex px-4 py-3 inline-block pl-5">
                 <input type="text" class="= w-[225px] px-1">
