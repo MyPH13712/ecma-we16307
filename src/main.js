@@ -52,21 +52,3 @@ router.on({
 
 });
 router.resolve();
-
-// class KhuonBanh {
-//     constructor(duong, bot) {
-//         this.duong = duong;
-//         this.bot = bot;
-//     }
-
-//     showInfo() {
-//         console.log(`
-//             Luong duong: ${this.duong};
-//             Luong Bot: ${this.bot};
-//         `);
-//     }
-// }
-// const banhDeo = new KhuonBanh(1, 5);
-// const banhNuong = new KhuonBanh(3, 2);
-// banhDeo.showInfo();
-// banhNuong.showInfo();
