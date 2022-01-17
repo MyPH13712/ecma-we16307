@@ -5,6 +5,8 @@ import ProductPage from "./pages/product";
 import SignUp from "./pages/signup";
 import SignIn from "./pages/signin";
 import DetailNewsPage from "./pages/detailNews";
+import NewsPage from "./pages/news";
+import NotFoundPage from "./pages/notfound";
 import DashBoardPage from "./pages/admin/dashboard";
 import AddNewsPage from "./pages/admin/news/add";
 import AdminNewsPage from "./pages/admin/news";
@@ -32,6 +34,9 @@ router.on({
     "/signin": () => {
         print(SignIn.render());
     },
+    "/news": () => {
+        print(NewsPage.render());
+    },
     "/news/:id": ({ data }) => {
         const { id } = data;
         print(DetailNewsPage.render(id));
@@ -51,4 +56,5 @@ router.on({
     },
 
 });
+router.notFound(() => print(NotFoundPage));
 router.resolve();
