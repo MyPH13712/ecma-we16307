@@ -58,3 +58,21 @@ router.on({
 });
 router.notFound(() => print(NotFoundPage));
 router.resolve();
+
+// promise
+// function loadScript(src) {
+//     return new Promise((resolve, reject) => {
+//         const script = document.createElement("script");
+//         script.src = src;
+//         script.onload = () => {
+//             resolve(script);
+//         };
+//         script.onerror = () => {
+//             reject(new Error("Lỗi kết nối"));
+//         };
+//         document.head.append(script);
+//     });
+// }
+// loadScript("https://www.google.com/search?q=d%E1%BB%8Bch&oq=&aqs=chrome.0.35i39i362l8.1559191j0j7&sourceid=chrome&ie=UTF-8")
+//     .then((script) => console.log(script))
+//     .catch((error) => console.log(error));
