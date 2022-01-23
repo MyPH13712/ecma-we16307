@@ -1,10 +1,6 @@
-import Header from "../components/header";
-import Footer from "../components/footer";
-
 const AboutPage = {
     render() {
         return /* html */`
-        ${Header.render()}
         <div class="max-w-5xl mx-auto">                            
         <div class="2xl:container 2xl:mx-auto lg:py-16 lg:px-20 md:py-12 md:px-6 py-9 px-4">
             <div class="flex flex-col lg:flex-row justify-between gap-8">
@@ -25,7 +21,7 @@ const AboutPage = {
         </div>
 
         </div>
-        ${Footer.render()}`;
+        `;
     },
 };
 export default AboutPage;

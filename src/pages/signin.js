@@ -1,10 +1,6 @@
-import Header from "../components/header";
-import Footer from "../components/footer";
-
 const SignIn = {
     render() {
         return /* html */`
-        ${Header.render()}
         <div class="max-w-5xl mx-auto">
             <div class="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
             <div class="max-w-md w-full space-y-8">
@@ -55,7 +51,6 @@ const SignIn = {
             </div>
           </div>
         </div>
-        ${Footer.render()}
         `;
     },
 };

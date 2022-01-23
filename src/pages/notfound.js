@@ -1,11 +1,8 @@
 import Banner from "../components/banner";
-import Header from "../components/header";
-import Footer from "../components/footer";
 
 const NotFoundPage = {
     render() {
         return /* html */`
-        ${Header.render()}
             <div class="max-w-5xl mx-auto">
                 <section>
                     ${Banner.render()}
@@ -24,7 +21,6 @@ const NotFoundPage = {
                 </div>
                 </main>
             </div>
-            ${Footer.render()}
         `;
     },
 };

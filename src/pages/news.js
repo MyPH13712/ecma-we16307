@@ -1,13 +1,10 @@
 import data from "../data";
-import Header from "../components/header";
-import Footer from "../components/footer";
 
 const NewsPage = {
     render() {
         return /* html */ `
         <div class="max-w-5xl mx-auto">
             <header>
-                ${Header.render()}
             </header>
             <section class="news">
                 <h2 class="max-w-5xl mx-auto font-semibold text-2xl text-sky-800 uppercase my-4">Tin tức</h2>
@@ -24,7 +21,6 @@ const NewsPage = {
                 </div>
             </section>
         </div>
-        ${Footer.render()}
         `;
     },
 };
