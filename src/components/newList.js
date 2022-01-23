@@ -1,11 +1,13 @@
-import data from "../data";
+// import data from "../data";
+import axios from "axios";
 
 const NewList = {
-    render() {
+    async render() {
+        const response = await axios.get("https://5e79b4b817314d00161333da.mockapi.io/posts");
         return /* html */`
         <h2 class="font-semibold text-2xl text-sky-800 uppercase my-4">Tin tức học tập</h2>            
         <div class="grid grid-cols-3 gap-8">
-            ${data.map((post) => `
+            ${response.data.map((post) => `
                     <div class="border p-3">
                         <a href="/news/${post.id}">
                             <img src="${post.img}" alt="" />
@@ -17,7 +19,7 @@ const NewList = {
         </div>
         <h2 class="font-semibold text-2xl text-sky-800 uppercase my-4">Hoạt động sinh viên</h2>            
         <div class="grid grid-cols-3 gap-8">
-            ${data.map((post) => `
+            ${response.data.map((post) => `
                     <div class="border p-3">
                         <a href="/news/${post.id}">
                             <img src="${post.img}" alt="" />

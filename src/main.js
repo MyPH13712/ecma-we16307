@@ -14,41 +14,42 @@ import EditNewsPage from "./pages/admin/news/edit";
 
 const router = new Navigo("/", { linksSelector: "a" });
 
-const print = (content) => {
-    document.getElementById("app").innerHTML = content;
-};
+const print = async (content) => {
+    document.getElementById("header").innerHTML = Header.render();
+    document.getElementById("app").innerHTML = await content.render();
+    document.getElementById("footer").innerHTML = Footer.render();
 
 router.on({
     "/": () => {
-        print(HomePage.render());
+        print(HomePage);
     },
     "/about": () => {
-        print(AboutPage.render());
+        print(AboutPage);
     },
     "/product": () => {
-        print(ProductPage.render());
+        print(ProductPage);
     },
     "/signup": () => {
-        print(SignUp.render());
+        print(SignUp);
     },
     "/signin": () => {
-        print(SignIn.render());
+        print(SignIn);
     },
     "/news": () => {
-        print(NewsPage.render());
+        print(NewsPage);
     },
     "/news/:id": ({ data }) => {
         const { id } = data;
         print(DetailNewsPage.render(id));
     },
     "/admin/dashboard": () => {
-        print(DashBoardPage.render());
+        print(DashBoardPage);
     },
     "/admin/news": () => {
-        print(AdminNewsPage.render());
+        print(AdminNewsPage);
     },
     "/admin/news/add": () => {
-        print(AddNewsPage.render());
+        print(AddNewsPage);
     },
     "/admin/news/edit:id": ({ data }) => {
         const { id } = data;
@@ -56,23 +57,4 @@ router.on({
     },
 
 });
-router.notFound(() => print(NotFoundPage));
 router.resolve();
-
-// promise
-// function loadScript(src) {
-//     return new Promise((resolve, reject) => {
-//         const script = document.createElement("script");
-//         script.src = src;
-//         script.onload = () => {
-//             resolve(script);
-//         };
-//         script.onerror = () => {
-//             reject(new Error("Lỗi kết nối"));
-//         };
-//         document.head.append(script);
-//     });
-// }
-// loadScript("https://www.google.com/search?q=d%E1%BB%8Bch&oq=&aqs=chrome.0.35i39i362l8.1559191j0j7&sourceid=chrome&ie=UTF-8")
-//     .then((script) => console.log(script))
-//     .catch((error) => console.log(error));
