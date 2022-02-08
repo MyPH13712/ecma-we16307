@@ -50,6 +50,9 @@ router.on({
     "/admin/news": () => {
         print(AdminNewsPage);
     },
+    "/admin/posts": () => {
+        print(AdminPostsPage);
+    },
     "/admin/news/add": () => {
         print(AddNewsPage);
     },
