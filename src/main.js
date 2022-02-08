@@ -10,6 +10,8 @@ import NotFoundPage from "./pages/notfound";
 import DashBoardPage from "./pages/admin/dashboard";
 import AddNewsPage from "./pages/admin/news/add";
 import AdminNewsPage from "./pages/admin/news";
+import AdminPosts from "./pages/admin/posts";
+import AdminAddPosts from "./pages/admin/posts/add";
 import EditNewsPage from "./pages/admin/news/edit";
 import Header from "./components/header";
 import Footer from "./components/footer";
@@ -19,6 +21,7 @@ const router = new Navigo("/", { linksSelector: "a" });
 const print = async (content) => {
     document.getElementById("header").innerHTML = Header.render();
     document.getElementById("app").innerHTML = await content.render();
+    if (content.afterRender) await content.afterRender();
     document.getElementById("footer").innerHTML = Footer.render();
 };
 router.on({
@@ -51,7 +54,10 @@ router.on({
         print(AdminNewsPage);
     },
     "/admin/posts": () => {
-        print(AdminPostsPage);
+        print(AdminPosts);
+    },
+    "/admin/posts/add": () => {
+        print(AdminAddPosts);
     },
     "/admin/news/add": () => {
         print(AddNewsPage);
