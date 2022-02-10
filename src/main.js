@@ -13,54 +13,50 @@ import AdminNewsPage from "./pages/admin/news";
 import AdminPosts from "./pages/admin/posts";
 import AdminAddPosts from "./pages/admin/posts/add";
 import EditNewsPage from "./pages/admin/news/edit";
-import Header from "./components/header";
-import Footer from "./components/footer";
 
 const router = new Navigo("/", { linksSelector: "a" });
 
 const print = async (content) => {
-    document.getElementById("header").innerHTML = Header.render();
     document.getElementById("app").innerHTML = await content.render();
     if (content.afterRender) await content.afterRender();
-    document.getElementById("footer").innerHTML = Footer.render();
 };
 router.on({
     "/": () => {
-        print(HomePage);
+        print(HomePage.render());
     },
     "/about": () => {
-        print(AboutPage);
+        print(AboutPage.render());
     },
     "/product": () => {
-        print(ProductPage);
+        print(ProductPage.render());
     },
     "/signup": () => {
-        print(SignUp);
+        print(SignUp.render());
     },
     "/signin": () => {
-        print(SignIn);
+        print(SignIn.render());
     },
     "/news": () => {
-        print(NewsPage);
+        print(NewsPage.render());
     },
     "/news/:id": ({ data }) => {
         const { id } = data;
         print(DetailNewsPage.render(id));
     },
     "/admin/dashboard": () => {
-        print(DashBoardPage);
+        print(DashBoardPage.render());
     },
     "/admin/news": () => {
-        print(AdminNewsPage);
+        print(AdminNewsPage.render());
     },
     "/admin/posts": () => {
-        print(AdminPosts);
+        print(AdminPosts.render());
     },
     "/admin/posts/add": () => {
-        print(AdminAddPosts);
+        print(AdminAddPosts.render());
     },
     "/admin/news/add": () => {
-        print(AddNewsPage);
+        print(AddNewsPage.render());
     },
     "/admin/news/edit:id": ({ data }) => {
         const { id } = data;
