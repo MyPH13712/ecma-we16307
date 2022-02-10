@@ -1,9 +1,10 @@
 import axios from "axios";
 import NavAdmin from "../../../components/NavAdmin";
+import { getAll } from "../../../api/posts";
 
 const AdminPosts = {
     async render() {
-        const response = await axios.get("https://5e79b4b817314d00161333da.mockapi.io/posts");
+        const response = await getAll();
         return /* html */`
         <div class="min-h-full">
             ${NavAdmin.render()}
@@ -62,7 +63,7 @@ const AdminPosts = {
                                   <div class="text-sm text-gray-900">${post.title}</div>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                  <a href="/admin/news/edit:id" class="text-indigo-600 hover:text-indigo-900">Sửa</a>
+                                  <a href="/admin/posts/${post.id}/edit" class="text-indigo-600 hover:text-indigo-900">Sửa</a>
                                   <button data-id="${post.id}" class="inline-block bg-indigo-500 hover:bg-indigo-800 text-white text-sm py-2 px-6 mx-4 rounded">Xóa</button>
                                 </td>
                               </tr>

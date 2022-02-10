@@ -12,83 +12,56 @@ import AddNewsPage from "./pages/admin/news/add";
 import AdminNewsPage from "./pages/admin/news";
 import AdminPosts from "./pages/admin/posts";
 import AdminAddPosts from "./pages/admin/posts/add";
-import EditNewsPage from "./pages/admin/news/edit";
+import AdminEditPosts from "./pages/admin/posts/edit";
 
 const router = new Navigo("/", { linksSelector: "a" });
 
-const print = async (content) => {
-    document.getElementById("app").innerHTML = await content.render();
-    if (content.afterRender) await content.afterRender();
+const print = async (content, id) => {
+    document.getElementById("app").innerHTML = await content.render(id);
+    if (content.afterRender) await content.afterRender(id);
 };
 router.on({
     "/": () => {
-        print(HomePage.render());
+        print(HomePage);
     },
     "/about": () => {
-        print(AboutPage.render());
+        print(AboutPage);
     },
     "/product": () => {
-        print(ProductPage.render());
+        print(ProductPage);
     },
     "/signup": () => {
-        print(SignUp.render());
+        print(SignUp);
     },
     "/signin": () => {
-        print(SignIn.render());
+        print(SignIn);
     },
     "/news": () => {
-        print(NewsPage.render());
+        print(NewsPage);
     },
     "/news/:id": ({ data }) => {
         const { id } = data;
         print(DetailNewsPage.render(id));
     },
     "/admin/dashboard": () => {
-        print(DashBoardPage.render());
+        print(DashBoardPage);
     },
     "/admin/news": () => {
-        print(AdminNewsPage.render());
+        print(AdminNewsPage);
     },
     "/admin/posts": () => {
-        print(AdminPosts.render());
+        print(AdminPosts);
     },
     "/admin/posts/add": () => {
-        print(AdminAddPosts.render());
+        print(AdminAddPosts);
+    },
+    "/admin/posts/:id/edit": ({ data }) => {
+        print(AdminEditPosts, data.id);
     },
     "/admin/news/add": () => {
-        print(AddNewsPage.render());
-    },
-    "/admin/news/edit:id": ({ data }) => {
-        const { id } = data;
-        print(EditNewsPage.render(id));
+        print(AddNewsPage);
     },
 
 });
 router.notFound(() => print(NotFoundPage));
 router.resolve();
-
-// Promise
-// function loadScript(src) {
-//     return new Promise((resolve, reject) => {
-//         const script = document.createElement("script");
-//         script.src = src;
-//         script.onload = () => {
-//             resolve(script);
-//         };
-//         script.onerror = () => {
-//             reject(new Error("Lỗi kết nối"));
-//         };
-//         document.head.append(script);
-//     });
-// }
-
-// async/await
-// async function asyncFunction() {
-//     try {
-//         const result = await loadScript("https://dev.to/lydiahallie/javascript-visualized-event-loop-3dif");
-//         console.log(result);
-//     } catch (error) {
-//         console.log(error);
-//     }
-// }
-// asyncFunction();
