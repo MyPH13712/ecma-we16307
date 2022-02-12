@@ -1,7 +1,7 @@
 const Header = {
     render() {
         return /* html */`
-        <div class="bg-blue-900 py-3 max-w-5xl mx-auto">
+        <div class="bg-blue-900 py-3 max-w-5xl mx-auto flex items-center justify-between">
             <a href="">
                 <img src="https://picsum.photos/180/75" class="mx-auto" alt="">
             </a>
@@ -14,8 +14,20 @@ const Header = {
                 <li><a href="/product" class="block px-3 py-3 hover:bg-blue-800 hover:text-white hover:underline">Sản phẩm</a></li>
                 <li><a href="/admin/dashboard" class="block px-3 py-3 hover:bg-blue-800 hover:text-white hover:underline">Thống kê</a></li>
             </ul>
+            <ul class="flex">
+                <li class="flex items-center">Xin chao <a href="/" class="block px-4 py-3 hover:bg-blue-800 hover:text-white" id="email"></a></li>
+            </ul>
         </div>
         </nav>`;
     },
+    afterRender() {
+        // Lấy thông tin từ localStorage
+        // Sử dụng JSON.parse để chuyển đổi chuỗi sang object
+        const email = document.querySelector("#email");
+        if (email) {
+            email.innerHTML = JSON.parse(localStorage.getItem("user")).email;
+        }
+    },
 };
+
 export default Header;

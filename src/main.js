@@ -2,8 +2,8 @@ import Navigo from "navigo";
 import HomePage from "./pages/home";
 import AboutPage from "./pages/about";
 import ProductPage from "./pages/product";
-import SignUp from "./pages/signup";
-import SignIn from "./pages/signin";
+import Signup from "./pages/signup";
+import Signin from "./pages/signin";
 import DetailNewsPage from "./pages/detailNews";
 import NewsPage from "./pages/news";
 import NotFoundPage from "./pages/notfound";
@@ -29,10 +29,10 @@ router.on({
         print(ProductPage);
     },
     "/signup": () => {
-        print(SignUp);
+        print(Signup);
     },
     "/signin": () => {
-        print(SignIn);
+        print(Signin);
     },
     "/news": () => {
         print(NewsPage);
