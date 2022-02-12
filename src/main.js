@@ -8,8 +8,6 @@ import DetailNewsPage from "./pages/detailNews";
 import NewsPage from "./pages/news";
 import NotFoundPage from "./pages/notfound";
 import DashBoardPage from "./pages/admin/dashboard";
-import AddNewsPage from "./pages/admin/news/add";
-import AdminNewsPage from "./pages/admin/news";
 import AdminPosts from "./pages/admin/posts";
 import AdminAddPosts from "./pages/admin/posts/add";
 import AdminEditPosts from "./pages/admin/posts/edit";
@@ -46,9 +44,6 @@ router.on({
     "/admin/dashboard": () => {
         print(DashBoardPage);
     },
-    "/admin/news": () => {
-        print(AdminNewsPage);
-    },
     "/admin/posts": () => {
         print(AdminPosts);
     },
@@ -58,10 +53,6 @@ router.on({
     "/admin/posts/:id/edit": ({ data }) => {
         print(AdminEditPosts, data.id);
     },
-    "/admin/news/add": () => {
-        print(AddNewsPage);
-    },
-
 });
 router.notFound(() => print(NotFoundPage));
 router.resolve();
