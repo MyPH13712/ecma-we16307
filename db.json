@@ -8,6 +8,10 @@
     }
   ],
   "users": [
-   
+    {
+      "email": "anv@gmail.com",
+      "password": "$2a$10$69GbPuVkDSYX7ZRaVosFFehshngSmBkMv.OsqNywpiSdT3im0kJzS",
+      "id": 1
+    }
   ]
 }
