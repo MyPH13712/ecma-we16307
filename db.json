@@ -44,5 +44,35 @@
       "password": "$2a$10$GGJ.xAE4N2AenWQInv2mk.vEK8XA0u3A0.l2gbxF2eI0W1pfQ3GWy",
       "id": 3
     }
+  ],
+  "products": [
+    {
+      "id": "23",
+      "name": "ggggggggggg updated 1",
+      "img": "http://res.cloudinary.com/ecommercer2021/image/upload/v1644489405/pn2qgxuqgjpav6fx2l1y.png",
+      "desc": "ahihihihi",
+      "price": "100"
+    },
+    {
+      "id": "24",
+      "name": "ggggggggggg updated 2",
+      "img": "http://res.cloudinary.com/ecommercer2021/image/upload/v1644489405/pn2qgxuqgjpav6fx2l1y.png",
+      "desc": "ahihihihi",
+      "price": "200"
+    },
+    {
+      "id": "25",
+      "name": "ggggggggggg updated 3",
+      "img": "http://res.cloudinary.com/ecommercer2021/image/upload/v1644489405/pn2qgxuqgjpav6fx2l1y.png",
+      "desc": "ahihihihi",
+      "price": "300"
+    },
+    {
+      "id": "26",
+      "name": "ggggggggggg updated 4",
+      "img": "http://res.cloudinary.com/ecommercer2021/image/upload/v1644489405/pn2qgxuqgjpav6fx2l1y.png",
+      "desc": "ahihihihi",
+      "price": "400"
+    }
   ]
 }

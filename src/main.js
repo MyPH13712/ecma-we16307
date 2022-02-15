@@ -1,11 +1,11 @@
 import Navigo from "navigo";
 import HomePage from "./pages/home";
 import AboutPage from "./pages/about";
-import ProductPage from "./pages/product";
+import ProductPage from "./pages/products";
+import ProductDetailPage from "./pages/products/detail";
 import Signup from "./pages/signup";
 import Signin from "./pages/signin";
-import DetailNewsPage from "./pages/detailNews";
-import NewsPage from "./pages/news";
+import CartPage from "./pages/cart";
 import NotFoundPage from "./pages/notfound";
 import DashBoardPage from "./pages/admin/dashboard";
 import AdminPosts from "./pages/admin/posts";
@@ -40,21 +40,16 @@ router.on({
     "/about": () => {
         print(AboutPage);
     },
-    "/product": () => {
-        print(ProductPage);
-    },
+    "/products": () => print(ProductPage),
+    "/products/:id": ({ data }) => print(ProductDetailPage, data.id),
     "/signup": () => {
         print(Signup);
     },
     "/signin": () => {
         print(Signin);
     },
-    "/news": () => {
-        print(NewsPage);
-    },
-    "/news/:id": ({ data }) => {
-        const { id } = data;
-        print(DetailNewsPage.render(id));
+    "/cart": () => {
+        print(CartPage);
     },
     "/admin/dashboard": () => {
         print(DashBoardPage);
