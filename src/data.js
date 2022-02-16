@@ -99,25 +99,3 @@ const data = [
     },
 ];
 export default data;
-
-// {
-//     createdAt: "2022-01-10T07:26:52.549Z",
-//     title: "Vinh danh 295 sinh viên FPT Polytechnic học kỳ Spring2018",
-//     img: "http://placeimg.com/640/480/fashion",
-//     desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero enim a reprehenderit similique omnis consectetur eaque autem atque ab. Repellendus at delectus tenetur similique neque.",
-//     id: "1",
-// },
-// {
-//     createdAt: "2022-01-10T20:33:27.477Z",
-//     title: "Sinh viên khối ngành Kinh tế học cách 'chạm' vào cảm xúc",
-//     img: "http://placeimg.com/640/480/sports",
-//     desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero enim a reprehenderit similique omnis consectetur eaque autem atque ab. Repellendus at delectus tenetur similique neque.",
-//     id: "2",
-// },
-// {
-//     createdAt: "2022-01-11T03:36:13.571Z",
-//     title: "Sinh viên FPoly trải nghiệm thực tế tại Mường Thanh Luxury",
-//     img: "http://placeimg.com/640/480/transport",
-//     desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero enim a reprehenderit similique omnis consectetur eaque autem atque ab. Repellendus at delectus tenetur similique neque.",
-//     id: "3",
-// },
