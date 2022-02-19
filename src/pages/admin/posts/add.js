@@ -1,4 +1,7 @@
+/* eslint-disable no-const-assign */
 import axios from "axios";
+import $ from "jquery";
+import validate from "jquery-validation";
 import NavAdmin from "../../../components/NavAdmin";
 import { add } from "../../../api/posts";
 
@@ -42,7 +45,7 @@ const AdminAddPosts = {
                                   <input type="file" name="img_post" id="img_post" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                                 </div> 
                                 <div class="mb-4">
-                                <img src="${data.img}">
+                                <img width="200" src="https://thumbs.dreamstime.com/b/no-thumbnail-image-placeholder-forums-blogs-websites-148010362.jpg" id="img-preview"/>
                                 </div>
                                 <div class="mb-4 ">
                                   <label for="postal-code" class="block text-sm font-medium text-gray-700">Mo ta</label>
@@ -73,32 +76,59 @@ const AdminAddPosts = {
                     `;
     },
     afterRender() {
-        const formAddPost = document.querySelector("#formAddPost");
+        const formAddPost = $("#formAddPost");
+        const imgPreview = document.querySelector("#img-preview");
+        const imgPost = document.querySelector("#img-post");
+        let imgLink = "";
         const CLOUDINARY_PRESET = "jkbdphzy";
         const CLOUDINARY_API_URL = "https://api.cloudinary.com/v1_1/ecommercer2021/image/upload";
+        // preview
+        imgPost.addEventListener("change", (e) => {
+            imgPreview.src = URL.createObjectURL(e.target.files[0]);
+        });
 
-        formAddPost.addEventListener("submit", async (e) => {
-            e.preventDefault();
-
-            // Lấy giá trị của input file
-            const file = document.querySelector("#img-post").files[0];
-            // Gắn vào đối tượng formData
-            const formData = new FormData();
-            formData.append("file", file);
-            formData.append("upload_preset", CLOUDINARY_PRESET);
-
-            // call api cloudinary, để upload ảnh lên
-            const { data } = await axios.post(CLOUDINARY_API_URL, formData, {
-                headers: {
-                    "Content-Type": "application/form-data",
+        // validate form
+        formAddPost.validate({
+            rules: {
+                "title-post": {
+                    required: true,
+                    minlength: 5,
                 },
-            });
-            // call API thêm bài viết
-            add({
-                title: document.querySelector("#title-post").value,
-                img: data.url,
-                desc: document.querySelector("#desc-post").value,
-            });
+            },
+            messages: {
+                "title-post": {
+                    required: "Không để trống trường này!",
+                    minlength: "Ít nhất phải trên 5 ký tự",
+                },
+            },
+            submitHandler: () => {
+                async function handleAddPost() {
+                    // Lấy giá trị của input file
+                    const file = document.querySelector("#img-post").files[0];
+                    if (file) {
+                        // Gắn vào đối tượng formData
+                        const formData = new FormData();
+                        formData.append("file", file);
+                        formData.append("upload_preset", CLOUDINARY_PRESET);
+
+                        // call api cloudinary, để upload ảnh lên
+                        const { data } = await axios.post(CLOUDINARY_API_URL, formData, {
+                            headers: {
+                                "Content-Type": "application/form-data",
+                            },
+                        });
+                        imgLink = data.url;
+                    }
+
+                    // call API thêm bài viết
+                    add({
+                        title: document.querySelector("#title-post").value, // iphone x plus 10
+                        img: imgLink || "",
+                        desc: document.querySelector("#desc-post").value,
+                    });
+                }
+                handleAddPost();
+            },
         });
     },
 };
